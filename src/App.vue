@@ -1,14 +1,11 @@
 <template>
-  <div id="app">
+  <div class="container mt-4" id="app">
     <!--<user></user>-->
     <order-header :orderCount="orders.length" :maxCount="maxCount"></order-header>
     <order :orders="orders" @orderRemoved="orderOut">{{ order }}</order>
     <new-order @newOrderIn="newOrder"></new-order>
 
-    <br/>
-    <br/>
-
-    <div class="alert alert-primary">
+    <div class="alert alert-primary mt-4">
       Info: Click on an order to delete it
     </div>
 
@@ -43,6 +40,9 @@ export default {
     },
     methods:{
       newOrder(order){
+          if (this.order.length > this.maxCount){
+             return alert('sdfer');
+          }
           this.orders.push(order);
       },
       orderOut(index){
@@ -61,8 +61,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 30px;
+
 }
 
 </style>
