@@ -1,13 +1,15 @@
 <template>
   <div class="container mt-4" id="app">
     <!--<user></user>-->
-    <order-header :orderCount="orders.length" :maxCount="maxCount"></order-header>
-    <order :orders="orders" @orderRemoved="orderOut">{{ order }}</order>
-    <new-order @newOrderIn="newOrder"></new-order>
+<!--    <order-header :orderCount="orders.length" :maxCount="maxCount"></order-header>-->
+<!--    <order :orders="orders" @orderRemoved="orderOut">{{ order }}</order>-->
+<!--    <new-order @newOrderIn="newOrder"></new-order>-->
+<!--    <div class="alert alert-primary mt-4">-->
+<!--      Info: Click on an order to delete it-->
+<!--    </div>-->
 
-    <div class="alert alert-primary mt-4">
-      Info: Click on an order to delete it
-    </div>
+    <quote></quote>
+
 
   </div>
 </template>
@@ -17,13 +19,18 @@
   import orderHeader from "./components/orders/Header";
   import Order from "./components/orders/Order";
   import newOrder from "./components/orders/newOrder";
+  //quotes
+  import Quote from "./components/quotes/Quote";
+
 
 export default {
   components:{
     // 'user' :User,
     'order-header':orderHeader,
     'order':Order,
-    'new-order':newOrder
+    'new-order':newOrder,
+    //quotes
+    'quote':Quote
 
   },
   name:'app',
