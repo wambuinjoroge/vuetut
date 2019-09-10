@@ -3,6 +3,7 @@
     <p>New quote</p>
     <p>{{myQuoteTitle}}</p>
     <p>{{switchQuoteTitle()}}</p>
+    <button class="btn" @click="resetName()">Reset Name</button>
   </div>
 </template>
 
@@ -18,6 +19,10 @@
       methods:{
           switchQuoteTitle(){
               return this.myQuoteTitle.split("").reverse().join("")
+          },
+          resetName(){
+              this.myQuoteTitle = "Love Ticks";
+              this.$emit('nameWasReset',this.myQuoteTitle);
           }
       }
     }

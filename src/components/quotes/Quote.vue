@@ -2,9 +2,10 @@
   <div class="component">
     <p class="quote-style">Here is a compilation of my new and old quotes,enjoy:</p>
     <button @click="changeQuoteTitle" class="btn btn-primary">Change quote title</button>
+    <p>{{quoteTitle}}</p>
     <div class="row mt-3">
       <div class="col-md-6">
-        <new-quote :myQuoteTitle="quoteTitle"></new-quote>
+        <new-quote :myQuoteTitle="quoteTitle" @nameWasReset="quoteTitle=$event"></new-quote>
       </div>
       <div class="col-md-6">
         <old-quote></old-quote>
@@ -26,6 +27,9 @@
     methods:{
         changeQuoteTitle(){
             this.quoteTitle = "Life Hacks"
+        },
+        resetName(){
+            this.myQuoteTitle = "Love Ticks";
         }
     },
     components:{
