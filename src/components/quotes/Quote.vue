@@ -1,14 +1,16 @@
 <template>
   <div class="component">
-    <p class="quote-style">Here is a compilation of my new and old quotes,enjoy:</p>
-    <button @click="changeQuoteTitle" class="btn btn-primary">Change quote title</button>
-    <p>{{quoteTitle}}</p>
+    <p class="quote-style">Here is a compilation of my new and edit quotes,enjoy:</p>
+    <button @click="changeQuoteTitle" class="btn btn-danger">Change quote title</button>
+   <div class="mt-2">
+     <p>{{quoteTitle}}</p>
+   </div>
     <div class="row mt-3">
       <div class="col-md-6">
-        <new-quote :myQuoteTitle="quoteTitle" @nameWasReset="quoteTitle=$event"></new-quote>
+        <new-quote :myQuoteTitle="quoteTitle" @nameWasReset="quoteTitle=$event" :resetFn="resetName" :editQuote="newQuote"></new-quote>
       </div>
       <div class="col-md-6">
-        <old-quote></old-quote>
+        <edit-quote :editQuote="newQuote"></edit-quote>
       </div>
     </div>
   </div>
@@ -16,12 +18,13 @@
 
 <script>
   import newQuote from './newQuote';
-  import oldQuote from './oldQuote';
+  import editQuote from './editQuote';
 
   export default {
     data:function () {
         return{
-            quoteTitle: "Love Tricks"
+            quoteTitle: "Love Tricks",
+            newQuote:"Kiki"
         }
     },
     methods:{
@@ -29,12 +32,12 @@
             this.quoteTitle = "Life Hacks"
         },
         resetName(){
-            this.myQuoteTitle = "Love Ticks";
+            this.quoteTitle = "Love Ticks";
         }
     },
     components:{
       'new-quote':newQuote,
-      'old-quote':oldQuote
+      'edit-quote':editQuote
     }
   }
 </script>
@@ -42,8 +45,7 @@
 <style>
   .component {
     padding: 20px;
-    /*box-shadow: 1px 1px 1px black;*/
-    background: khaki;
+    background: yellow;
     border: 1px solid;
   }
 </style>
