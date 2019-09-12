@@ -1,7 +1,7 @@
 <template>
   <div class="new-quote-style">
     <p>New quote</p>
-    <p>{{newQuote}}</p>
+    <p>{{editQuote}}</p>
     <p>{{switchQuoteTitle()}}</p>
     <button class="btn" @click="resetFn()">Reset Name</button>
 <!--    <button class="btn" @click="resetName()">Reset Name</button>-->
@@ -17,7 +17,7 @@
               // default:"Vee"
           },
           resetFn:Function,
-          newQuote:String
+          editQuote:String
       },
       methods:{
           switchQuoteTitle(){
@@ -34,7 +34,7 @@
 <style scoped>
   .new-quote-style {
     padding: 20px;
-    background: forestgreen;
+    background: palegoldenrod;
     border: 1px solid;
 
   }

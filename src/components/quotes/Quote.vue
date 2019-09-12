@@ -32,7 +32,7 @@
             this.quoteTitle = "Life Hacks"
         },
         resetName(){
-            this.quoteTitle = "Love Ticks";
+            this.quoteTitle = "Love Tricks";
         }
     },
     components:{
@@ -45,7 +45,7 @@
 <style>
   .component {
     padding: 20px;
-    background: yellow;
+    background: oldlace;
     border: 1px solid;
   }
 </style>

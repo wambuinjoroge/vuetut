@@ -1,7 +1,7 @@
 <template>
   <div class="edit-quote-style">
-    <p>New Quote:{{newQuote}}</p>
-    <button class="btn" @click="editQuote">Click to edit</button>
+    <p>New Quote:{{editQuote}}</p>
+    <button class="btn" @click="getNewQuote">Click to edit</button>
   </div>
 </template>
 
@@ -9,8 +9,8 @@
     export default {
         props:['editQuote'],
         methods:{
-            editQuote(){
-                this.newQuote = "Backs"
+            getNewQuote(){
+                this.editQuote = "Back Kicks"
             }
         }
     }
@@ -19,7 +19,7 @@
 <style scoped>
   .edit-quote-style {
     padding: 20px;
-    background: chocolate;
+    background: peachpuff;
     border: 1px solid;
 
   }
