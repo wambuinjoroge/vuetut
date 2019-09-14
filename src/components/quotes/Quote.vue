@@ -4,13 +4,24 @@
     <button @click="changeQuoteTitle" class="btn btn-danger">Change quote title</button>
    <div class="mt-2">
      <p>{{quoteTitle}}</p>
+     <p>{{newQuote}}</p>
    </div>
     <div class="row mt-3">
       <div class="col-md-6">
-        <new-quote :myQuoteTitle="quoteTitle" @nameWasReset="quoteTitle=$event" :resetFn="resetName" :editQuote="newQuote"></new-quote>
+        <new-quote
+          :myQuoteTitle="quoteTitle"
+          @nameWasReset="quoteTitle=$event"
+          :resetFn="resetName"
+          :resetQuoteFn="resetQuote"
+          :editQuote="newQuote">
+        </new-quote>
       </div>
       <div class="col-md-6">
-        <edit-quote :editQuote="newQuote"></edit-quote>
+        <edit-quote
+          :editQuote="newQuote"
+          :editQuoteFn="editQuoteCall"
+          @quoteWasEdited="newQuote=$event">
+        </edit-quote>
       </div>
     </div>
   </div>
@@ -33,6 +44,12 @@
         },
         resetName(){
             this.quoteTitle = "Love Tricks";
+        },
+        editQuoteCall(){
+            this.newQuote = "Back Kicks";
+        },
+        resetQuote(){
+            this.newQuote = "Kiki";
         }
     },
     components:{
