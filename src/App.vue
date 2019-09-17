@@ -8,7 +8,8 @@
 <!--      Info: Click on an order to delete it-->
 <!--    </div>-->
 
-    <quote></quote>
+<!--    <quote></quote>-->
+    <post></post>
 
 
   </div>
@@ -20,17 +21,20 @@
   import Order from "./components/orders/Order";
   import newOrder from "./components/orders/newOrder";
   //quotes
-  import Quote from "./components/quotes/Quote";
+  // import Quote from "./components/quotes/Quote";
+  import Post from "./components/posts/Post";
 
 
 export default {
   components:{
     // 'user' :User,
-    'order-header':orderHeader,
-    'order':Order,
-    'new-order':newOrder,
-    //quotes
-    'quote':Quote
+    // 'order-header':orderHeader,
+    // 'order':Order,
+    // 'new-order':newOrder,
+    // //quotes
+    // 'quote':Quote,
+//  posts
+    "post":Post
 
   },
   name:'app',

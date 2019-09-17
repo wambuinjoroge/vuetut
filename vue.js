@@ -6287,7 +6287,7 @@ function parse (
         currentParent = element;
         stack.push(element);
       }
-      // apply post-transforms
+      // apply posts-transforms
       for (var i$2 = 0; i$2 < postTransforms.length; i$2++) {
         postTransforms[i$2](element, options);
       }
